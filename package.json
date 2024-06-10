@@ -1,7 +1,7 @@
 {
   "name": "@hitomihiumi/discord-cards",
   "version": "0.5.0",
-  "description": "A simple module with out-of-the-box solutions for a wound map, profile and user greeting.",
+  "description": "A simple module with out-of-the-box solutions for rank, profile and user greeting cards.",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "scripts": {
@@ -17,7 +17,8 @@
   "author": "hitomihiumi",
   "license": "ISC",
   "dependencies": {
-    "@hitomihiumi/lazy-canvas": "^0.7.6",
+    "@hitomihiumi/lazy-canvas": "^0.7.7",
+    "node-fetch": "^2.7.0",
     "octokit": "^4.0.2"
   },
   "devDependencies": {

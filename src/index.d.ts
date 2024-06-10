@@ -1,6 +1,8 @@
 declare module '@hitomihiumi/discord-cards';
 
-import { downloadStyles, dataReplace, loadStyle } from "./utils";
+import { dataReplace, loadStyle } from "./utils";
 import { RankCard } from './cards/rank';
+import { ProfileCard } from './cards/profile';
+import { fonts } from "./fonts/fonts";
 
-export { loadStyle, downloadStyles, dataReplace, RankCard };
+export { loadStyle, dataReplace, RankCard, ProfileCard, fonts };

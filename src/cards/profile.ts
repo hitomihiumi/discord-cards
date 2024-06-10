@@ -1,9 +1,9 @@
-import { LazyCanvas, isValidColor } from '@hitomihiumi/lazy-canvas';
-import { loadStyle, dataReplace } from '../utils';
-import { Base } from './base';
-import { Rank } from "../types/rank";
+import { LazyCanvas, isValidColor } from "@hitomihiumi/lazy-canvas";
+import { loadStyle, dataReplace } from "../utils";
+import { Base } from "./base";
+import { Profile } from "../types/profile";
 
-export class RankCard extends Base {
+export class ProfileCard extends Base {
     declare data: any;
 
     constructor(data?: any) {
@@ -65,6 +65,12 @@ export class RankCard extends Base {
         return this;
     }
 
+    setBiography(biography: string) {
+        this.data.biography = biography;
+
+        return this;
+    }
+
     setPosition(position: string) {
         this.data.position = position;
 
@@ -72,13 +78,13 @@ export class RankCard extends Base {
     }
 
     async render() {
-        let data = await loadStyle(this.data.style, 'rank');
+        let data = await loadStyle(this.data.style, 'profile');
 
         data.data.layers.forEach((layer: any) => {
             switch (layer.type) {
                 case 'text':
-                    if (this.data.font?.toJSON()?.family) layer.font = this.data.font.toJSON().family;
-                    if (this.data.font?.toJSON()?.weight) layer.weight = this.data.font.toJSON().weight;
+                    if (this.data.font?.family) layer.font = this.data.font.family;
+                    if (this.data.font?.weight) layer.weight = this.data.font.weight;
                     if (this.data.textColor) layer.color = this.data.textColor;
                     layer.size = dataReplace(layer.size, this.data);
                     layer.text = dataReplace(layer.text, this.data);
@@ -92,7 +98,7 @@ export class RankCard extends Base {
             }
         })
 
-        let image = await new LazyCanvas().setData(data.data).loadFonts(this.data.font).renderImage()
+        let image = await new LazyCanvas().setData(data.data).renderImage()
 
         return image;
     }

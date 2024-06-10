@@ -1,6 +1,6 @@
 import { Font } from '@hitomihiumi/lazy-canvas';
 
-export interface Rank {
+export interface Profile {
     name: string;
     xp: number;
     neededXp: number;
@@ -16,5 +16,6 @@ export interface Rank {
     progressColor?: string;
     textColor?: string;
     font?: Font;
+    biography?: string;
     position?: string;
 }
