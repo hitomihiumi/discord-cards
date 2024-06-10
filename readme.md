@@ -1,3 +1,5 @@
+<a href="https://www.npmjs.com/package/@hitomihiumi/discord-cards"><img src="https://img.shields.io/npm/v/@hitomihiumi/discord-cards.svg?maxAge=3600" alt="npm version" /></a>
+<a href="https://www.npmjs.com/package/@hitomihiumi/discord-cards"><img src="https://img.shields.io/npm/dt/@hitomihiumi/discord-cards.svg?maxAge=3600" alt="npm downloads" /></a>
 # Introduction
 A simple module with out-of-the-box solutions for rank, profile and user greeting cards.
 
@@ -14,7 +16,7 @@ import * as fs from 'fs';
 
 const card = new RankCard()
     .setAvatar('https://i.pinimg.com/1200x/f3/32/19/f332192b2090f437ca9f49c1002287b6.jpg')
-    .setBackground('https://i.pinimg.com/564x/27/c7/fa/27c7fabf2d744857e3bd4a094ad9b4c4.jpg')
+    .setBackground('https://www.sumadhwaseva.com/wp-content/uploads/2013/10/Grey-Background-Website-Wallpapers-600x200.jpg')
     .setLevel(5)
     .setCurrentXp(100)
     .setNeededXp(200)

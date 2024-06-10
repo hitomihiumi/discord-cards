@@ -2,6 +2,7 @@ import { exec } from 'child_process';
 //@ts-ignore
 import fetch from "node-fetch";
 import * as fs from "fs";
+import {resolve} from "path";
 
 export async function loadStyle(name: string, type: string) {
     if (!name || !type) throw new Error("Name and type are required");
@@ -11,20 +12,20 @@ export async function loadStyle(name: string, type: string) {
     let data;
 
     try {
-        data = require('../stylelib/' + type + '/' + name + '.js');
+        data = require(resolve('./stylelib/' + type + '/' + name + '.js'));
     } catch (e) {
-        fetch(`https://raw.githubusercontent.com/hitomihiumi/discord-cards-styles/master/styleslib/${type}/${name}.js`).then(async (res: {
+        await fetch(`https://raw.githubusercontent.com/hitomihiumi/discord-cards-styles/master/styleslib/${type}/${name}.js`).then(async (res: {
             text: () => any;
         }) => {
             let style = await res.text();
 
-            if (!fs.existsSync(`./stylelib/${type}`)) fs.mkdirSync(`./stylelib/${type}`, {recursive: true});
+            if (!fs.existsSync(resolve(`./stylelib/${type}`))) fs.mkdirSync(resolve(`./stylelib/${type}`), {recursive: true});
 
-            fs.appendFileSync(`./stylelib/${type}/${name}.js`, style, {encoding: 'utf8'})
+            fs.appendFileSync(resolve(`./stylelib/${type}/${name}.js`), style, {encoding: 'utf8'})
 
             console.log('[Discord-Cards] Style successful downloaded.');
 
-            data = require('../stylelib/' + type + '/' + name + '.js');
+            data = require(resolve('./stylelib/' + type + '/' + name + '.js'));
         }).catch((e: any) => {
             console.log(e);
         });
