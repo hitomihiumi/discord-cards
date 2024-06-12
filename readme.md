@@ -44,3 +44,6 @@ Class documentation can be found below by clicking on the appropriate class name
 - [ProfileCard](./docs/profilecard.md)
 - [RankCard](./docs/rankcard.md)
 
+## Styles
+
+Styles storage location [`discord-cards-styles`](https://github.com/hitomihiumi/discord-cards-styles/tree/master) repository. To load your own styles, create a pull-request.
