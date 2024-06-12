@@ -71,7 +71,7 @@ export class ProfileCard extends Base {
         return this;
     }
 
-    setPosition(position: string) {
+    setPosition(position: string | number) {
         this.data.position = position;
 
         return this;
@@ -99,7 +99,7 @@ export class ProfileCard extends Base {
             }
         })
 
-        let image = await new LazyCanvas().setData(data.data).renderImage()
+        let image = await new LazyCanvas().setData(data.data).loadFonts(this.data.font).renderImage()
 
         return image;
     }

@@ -65,7 +65,7 @@ export class RankCard extends Base {
         return this;
     }
 
-    setPosition(position: string) {
+    setPosition(position: string | number) {
         this.data.position = position;
 
         return this;

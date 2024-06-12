@@ -17,5 +17,5 @@ export interface Profile {
     textColor?: string;
     font?: Font;
     biography?: string;
-    position?: string;
+    position?: string | number;
 }

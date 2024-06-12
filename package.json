@@ -1,6 +1,6 @@
 {
   "name": "@hitomihiumi/discord-cards",
-  "version": "0.5.2f",
+  "version": "0.5.2f2",
   "description": "A simple module with out-of-the-box solutions for rank, profile and user greeting cards.",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",

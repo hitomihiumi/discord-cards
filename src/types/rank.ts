@@ -16,5 +16,5 @@ export interface Rank {
     progressColor?: string;
     textColor?: string;
     font?: Font;
-    position?: string;
+    position?: string | number;
 }
