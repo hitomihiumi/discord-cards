@@ -88,6 +88,7 @@ export class RankCard extends Base {
                     break;
                 default:
                     layer.color = dataReplace(layer.color, this.data);
+                    layer.width = eval(dataReplace(layer.width, this.data));
                     break;
             }
         })
