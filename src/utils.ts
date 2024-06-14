@@ -1,8 +1,27 @@
-import { exec } from 'child_process';
 //@ts-ignore
 import fetch from "node-fetch";
 import * as fs from "fs";
-import {resolve} from "path";
+import { resolve } from "path";
+
+export async function updateStyle(name: string, type: string) {
+    await fetch(`https://raw.githubusercontent.com/hitomihiumi/discord-cards-styles/master/styleslib/${type}/${name}.js`).then(async (res: { text: () => any; }) => {
+        let style = await res.text();
+
+        if (!fs.existsSync(resolve(`./stylelib/${type}`))) fs.mkdirSync(resolve(`./stylelib/${type}`), {recursive: true});
+
+        if (!fs.existsSync(resolve(`./stylelib/${type}/${name}.js`))) {
+            fs.appendFileSync(resolve(`./stylelib/${type}/${name}.js`), style, {encoding: 'utf8'})
+            console.log('[Discord-Cards] Style ' + name + ' successful downloaded.');
+        } else {
+            if (fs.readFileSync(resolve(`./stylelib/${type}/${name}.js`), {encoding: 'utf8'}) !== style) {
+                fs.writeFileSync(resolve(`./stylelib/${type}/${name}.js`), style, {encoding: 'utf8'})
+                console.log('[Discord-Cards] Style ' + name + ' successful updated.');
+            }
+        }
+    }).catch((e: any) => {
+        console.log(e);
+    });
+}
 
 export async function loadStyle(name: string, type: string) {
     if (!name || !type) throw new Error("Name and type are required");
@@ -11,27 +30,12 @@ export async function loadStyle(name: string, type: string) {
 
     let data;
 
-    try {
-        data = require(resolve('./stylelib/' + type + '/' + name + '.js'));
-    } catch (e) {
-        await fetch(`https://raw.githubusercontent.com/hitomihiumi/discord-cards-styles/master/styleslib/${type}/${name}.js`).then(async (res: {
-            text: () => any;
-        }) => {
-            let style = await res.text();
+    await updateStyle(name, type)
 
-            if (!fs.existsSync(resolve(`./stylelib/${type}`))) fs.mkdirSync(resolve(`./stylelib/${type}`), {recursive: true});
-
-            fs.appendFileSync(resolve(`./stylelib/${type}/${name}.js`), style, {encoding: 'utf8'})
-
-            console.log('[Discord-Cards] Style successful downloaded.');
-
-            data = require(resolve('./stylelib/' + type + '/' + name + '.js'));
-        }).catch((e: any) => {
-            console.log(e);
-        });
-    }
+    data = require(resolve('./stylelib/' + type + '/' + name + '.js'));
 
     if (!data) throw new Error('[Discord-Cards] Style ' + name + ' not found for ' + type + '!');
+    // @ts-ignore
     if (data.data.length === 0) throw new Error('[Discord-Cards] Style ' + name + ' is empty for ' + type + '!');
 
     return data;
