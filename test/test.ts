@@ -12,7 +12,7 @@ const card = new ProfileCard()
     .setStyle('base')
     .setName('Hitomi')
     .setFont(fonts.opensansBold)
-    .setPosition('1')
+    .setPosition('#1')
     .setBiography('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.');
 
 async function main() {

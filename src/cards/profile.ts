@@ -1,5 +1,5 @@
-import { LazyCanvas, isValidColor } from "@hitomihiumi/lazy-canvas";
-import { loadStyle, dataReplace } from "../utils";
+import { isValidColor } from "@hitomihiumi/lazy-canvas";
+import { loadStyle, renderCard } from "../utils";
 import { Base } from "./base";
 import { Profile } from "../types/profile";
 
@@ -59,12 +59,6 @@ export class ProfileCard extends Base {
         return this;
     }
 
-    setStyle(style: string) {
-        this.data.style = style;
-
-        return this;
-    }
-
     setBiography(biography: string) {
         this.data.biography = biography;
 
@@ -80,26 +74,7 @@ export class ProfileCard extends Base {
     async render() {
         let data = await loadStyle(this.data.style, 'profile');
 
-        data.data.layers.forEach((layer: any) => {
-            switch (layer.type) {
-                case 'text':
-                    if (this.data.font?.family) layer.font = this.data.font.family;
-                    if (this.data.font?.weight) layer.weight = this.data.font.weight;
-                    if (this.data.textColor) layer.color = this.data.textColor;
-                    layer.size = dataReplace(layer.size, this.data);
-                    layer.text = dataReplace(layer.text, this.data);
-                    break;
-                case 'ellipseimage' || 'image':
-                    layer.image = dataReplace(layer.image, this.data);
-                    break;
-                default:
-                    layer.color = dataReplace(layer.color, this.data);
-                    layer.width = eval(dataReplace(layer.width, this.data));
-                    break;
-            }
-        })
-
-        let image = await new LazyCanvas().setData(data.data).loadFonts(this.data.font).renderImage()
+        let image = await renderCard(data, this.data);
 
         return image;
     }

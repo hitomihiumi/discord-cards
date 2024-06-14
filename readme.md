@@ -43,6 +43,7 @@ Class documentation can be found below by clicking on the appropriate class name
 - [Base](./docs/base.md)
 - [ProfileCard](./docs/profilecard.md)
 - [RankCard](./docs/rankcard.md)
+- [LevelUpCard](./docs/levelupcard.md)
 
 ## Styles
 

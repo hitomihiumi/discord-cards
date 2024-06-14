@@ -17,4 +17,5 @@ export interface Rank {
     textColor?: string;
     font?: Font;
     position?: string | number;
+    decorationColor?: string;
 }

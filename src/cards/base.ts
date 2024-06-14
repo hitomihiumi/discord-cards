@@ -1,4 +1,4 @@
-import { Font, isImageUrlValid } from "@hitomihiumi/lazy-canvas";
+import { Font, isImageUrlValid, isValidColor } from "@hitomihiumi/lazy-canvas";
 
 export class Base {
     data: any;
@@ -27,6 +27,7 @@ export class Base {
     }
 
     setTextColor(color: string) {
+        if (!isValidColor(color)) throw new Error('[Discord-Cards] Invalid color');
         this.data.textColor = color;
 
         return this;
@@ -34,6 +35,26 @@ export class Base {
 
     setName(name: string) {
         this.data.name = name;
+
+        return this;
+    }
+
+    setStyle(style: string) {
+        this.data.style = style;
+
+        return this;
+    }
+
+    setDecorationColor(color: string) {
+        if (!isValidColor(color)) throw new Error('[Discord-Cards] Invalid color');
+        this.data.decorationColor = color;
+
+        return this;
+    }
+
+    setBorderColor(color: string) {
+        if (!isValidColor(color)) throw new Error('[Discord-Cards] Invalid color');
+        this.data.borderColor = color;
 
         return this;
     }

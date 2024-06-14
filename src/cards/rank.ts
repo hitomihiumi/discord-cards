@@ -1,5 +1,5 @@
-import { LazyCanvas, isValidColor } from '@hitomihiumi/lazy-canvas';
-import { loadStyle, dataReplace } from '../utils';
+import { isValidColor } from '@hitomihiumi/lazy-canvas';
+import {loadStyle, renderCard} from '../utils';
 import { Base } from './base';
 import { Rank } from "../types/rank";
 
@@ -59,12 +59,6 @@ export class RankCard extends Base {
         return this;
     }
 
-    setStyle(style: string) {
-        this.data.style = style;
-
-        return this;
-    }
-
     setPosition(position: string | number) {
         this.data.position = position;
 
@@ -74,26 +68,7 @@ export class RankCard extends Base {
     async render() {
         let data = await loadStyle(this.data.style, 'rank');
 
-        data.data.layers.forEach((layer: any) => {
-            switch (layer.type) {
-                case 'text':
-                    if (this.data.font?.toJSON()?.family) layer.font = this.data.font.toJSON().family;
-                    if (this.data.font?.toJSON()?.weight) layer.weight = this.data.font.toJSON().weight;
-                    if (this.data.textColor) layer.color = this.data.textColor;
-                    layer.size = dataReplace(layer.size, this.data);
-                    layer.text = dataReplace(layer.text, this.data);
-                    break;
-                case 'ellipseimage' || 'image':
-                    layer.image = dataReplace(layer.image, this.data);
-                    break;
-                default:
-                    layer.color = dataReplace(layer.color, this.data);
-                    layer.width = eval(dataReplace(layer.width, this.data));
-                    break;
-            }
-        })
-
-        let image = await new LazyCanvas().setData(data.data).loadFonts(this.data.font).renderImage()
+        let image = await renderCard(data, this.data);
 
         return image;
     }

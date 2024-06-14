@@ -62,13 +62,7 @@ Extends [Base](./base.md)
     <tr>
         <td>setPosition()</td>
         <td>To set the user's position on the leaderboard </td>
-        <td>string</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>setStyle()</td>
-        <td>To set the profile card style</td>
-        <td>string</td>
+        <td>string, number</td>
         <td>-</td>
     </tr>
 </table>

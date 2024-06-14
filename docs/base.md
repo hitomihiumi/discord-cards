@@ -40,6 +40,24 @@ A base class that has common functions for all classes.
         <td>string, Gradient* or Pattern*</td>
         <td>-</td>
     </tr>
+    <tr>
+        <td>setStyle()</td>
+        <td>To set the card style</td>
+        <td>string</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>setBorderColor()</td>
+        <td>To set the border color</td>
+        <td>string, Gradient* or Pattern*</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>setDecorationColor()</td>
+        <td>To set the decoration color</td>
+        <td>string, Gradient* or Pattern*</td>
+        <td>-</td>
+    </tr>
 </table>
 
 *[Font](https://github.com/hitomihiumi/lazy-canvas/blob/main/docs/font.md)

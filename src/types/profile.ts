@@ -18,4 +18,5 @@ export interface Profile {
     font?: Font;
     biography?: string;
     position?: string | number;
+    decorationColor?: string;
 }
