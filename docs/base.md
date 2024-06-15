@@ -68,3 +68,6 @@ A base class that has common functions for all classes.
 
 - [ProfileCard](./profilecard.md)
 - [RankCard](./rankcard.md)
+- [LevelUpCard](./levelupcard.md)
+- [WelcomeCard](./welcomecard.md)
+- [GoodbyeCard](./goodbyecard.md)

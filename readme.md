@@ -44,6 +44,8 @@ Class documentation can be found below by clicking on the appropriate class name
 - [ProfileCard](./docs/profilecard.md)
 - [RankCard](./docs/rankcard.md)
 - [LevelUpCard](./docs/levelupcard.md)
+- [WelcomeCard](./docs/welcomecard.md)
+- [GoodbyeCard](./docs/goodbyecard.md)
 
 ## Styles
 

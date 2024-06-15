@@ -5,6 +5,8 @@ export class Base {
 
     constructor(data: any) {
         this.data = { ...data }
+
+        this.data.style = 'base';
     }
 
     setAvatar(url: string) {

@@ -36,3 +36,31 @@ Extends [Base](./base.md)
         <td>Returns NodeJS.ArrayBufferView</td>
     </tr>
 </table>
+
+## Example
+
+```ts
+import { LevelUpCard, fonts } from "@hitomihiumi/discord-cards";
+import * as fs from 'fs';
+
+const card = new LevelUpCard()
+    .setName("Hitomi")
+    .setAvatar('https://i.pinimg.com/1200x/f3/32/19/f332192b2090f437ca9f49c1002287b6.jpg')
+    .setBackground('https://cs12.pikabu.ru/post_img/big/2021/09/16/10/1631813426193895567.png')
+    .setStyle('base')
+    .setFont(fonts.opensansBold)
+    .setCurrentLevel(2)
+    .setPreviousLevel(1)
+    .setLevelFontSizes(50, 50)
+
+async function main() {
+    let canvas = await card.render();
+    console.log(canvas);
+
+    fs.writeFileSync('test.png', canvas);
+}
+
+main();
+```
+
+![](https://i.imgur.com/P1eLwUn.png)

@@ -1,6 +1,6 @@
-# WelcomeCard
+# GoodbyeCard
 
-The class of the server user's welcome card.
+The class of the server user's goodbye card.
 
 Extends [Base](./base.md)
 
@@ -28,10 +28,10 @@ Extends [Base](./base.md)
 ## Example
 
 ```ts
-import { WelcomeCard, fonts } from "@hitomihiumi/discord-cards";
+import { GoodbyeCard, fonts } from "@hitomihiumi/discord-cards";
 import * as fs from 'fs';
 
-const card = new WelcomeCard()
+const card = new GoodbyeCard()
     .setGuild("Test Guild Name")
     .setName("Hitomi")
     .setAvatar('https://i.pinimg.com/1200x/f3/32/19/f332192b2090f437ca9f49c1002287b6.jpg')
@@ -49,4 +49,4 @@ async function main() {
 main();
 ```
 
-![](https://i.imgur.com/kk0c238.png)
+![](https://i.imgur.com/aM7v3Fq.png)

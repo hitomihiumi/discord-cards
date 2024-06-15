@@ -79,8 +79,8 @@ Extends [Base](./base.md)
 ## Example
 
 ```ts
-import { ProfileCard, fonts, updateStyle } from "@hitomihiumi/discord-cards";
-import * as fs from 'fs'
+import { ProfileCard, fonts } from "@hitomihiumi/discord-cards";
+import * as fs from 'fs';
 
 const card = new ProfileCard()
     .setAvatar('https://i.pinimg.com/1200x/f3/32/19/f332192b2090f437ca9f49c1002287b6.jpg')

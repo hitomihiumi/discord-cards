@@ -5,8 +5,13 @@ import { Welcome } from "../types/welcome";
 export class WelcomeCard extends Base {
     declare data: any;
 
-    constructor(data: any) {
+    constructor(data?: any) {
         super(data);
+    }
+
+    setGuild(name: string, avatar?: string) {
+        this.data.guild = { name, avatar };
+        return this;
     }
 
     async render() {
