@@ -29,4 +29,10 @@ Extends [Base](./base.md)
         <td>string, number</td>
         <td>-</td>
     </tr>
+    <tr>
+        <td>render()</td>
+        <td>Method intended for obtaining image data</td>
+        <td>-</td>
+        <td>Returns NodeJS.ArrayBufferView</td>
+    </tr>
 </table>
