@@ -3,6 +3,7 @@ import fetch from "node-fetch";
 import * as fs from "fs";
 import { resolve } from "path";
 import { LazyCanvas } from "@hitomihiumi/lazy-canvas";
+import { SKRSContext2D } from "@napi-rs/canvas";
 
 export async function updateStyle(name: string, type: string) {
     await fetch(`https://raw.githubusercontent.com/hitomihiumi/discord-cards-styles/master/styleslib/${type}/${name}.js`).then(async (res: { text: () => any; }) => {
@@ -103,7 +104,7 @@ export async function renderCard(data: any, thisData: any) {
         }
     })
 
-    let image: LazyCanvas | NodeJS.ArrayBufferView = new LazyCanvas().setData(data.data)
+    let image: LazyCanvas | NodeJS.ArrayBufferView | SKRSContext2D | undefined = new LazyCanvas().setData(data.data)
 
     if (thisData.font) image.loadFonts(thisData.font)
 

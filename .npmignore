@@ -1,0 +1,13 @@
+*.ts
+!*.d.ts
+tsconfig.json
+src/
+test/
+node_modules
+package-lock.json
+.idea
+test.png
+docs/
+resolve(.
+/discord-cards.iml
+/stylelib/
