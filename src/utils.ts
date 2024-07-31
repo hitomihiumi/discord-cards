@@ -62,14 +62,13 @@ export function dataReplace(str: string, data: any) {
     str = str.replace(/#{guildAvatar}#/g, data.guild?.avatar ? data.guild?.avatar : 'https://i.pinimg.com/1200x/f3/32/19/f332192b2090f437ca9f49c1002287b6.jpg');
     str = str.replace(/#{guildName}#/g, data.guild?.name ? data.guild?.name : 'No Guild Name');
     str = str.replace(/#{previousLevel}#/g, data.previousLevel ? data.previousLevel : 0);
+    str = str.replace(/#{levelFontSize}#/g, data.levelFontSize ? data.levelFontSize : 33);
 
-    if (typeof data.levelFontSize === 'object') {
+    if (typeof data.levelFontSizes === 'object') {
         let ind = [ "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten" ];
-        for (let i = 0; i < data.levelFontSize.length; i++) {
-            str = str.replace(new RegExp(`#{levelFontSize${ind[i]}}#`, 'g'), data.levelFontSize[i]);
+        for (let i = 0; i < data.levelFontSizes.length; i++) {
+            str = str.replace(new RegExp(`#{levelFontSize${ind[i]}}#`, 'g'), data.levelFontSizes[i]);
         }
-    } else {
-        str = str.replace(/#{levelFontSize}#/g, data.levelFontSize ? data.levelFontSize : 33);
     }
 
     if (typeof data.progressColor === 'object') str = data.progressColor.toJSON();

@@ -5,8 +5,12 @@ A simple module with out-of-the-box solutions for rank, profile and user greetin
 
 ## Get Started
 
-1. Install the module by using `npm i @hitomihiumi/discord-cards`
+1. Install the module by using `npm i @hitomihiumi/discord-cards@latest`
 2. Enjoy!
+
+## Documentation
+
+You can find the documentation [here](https://hitomihiumi.github.io/)
 
 ## Example
 
@@ -35,17 +39,6 @@ main();
 ```
 
 ![](https://i.imgur.com/3Um8Ncc.png)
-
-## Documentation
-
-Class documentation can be found below by clicking on the appropriate class names.
-
-- [Base](./docs/base.md)
-- [ProfileCard](./docs/profilecard.md)
-- [RankCard](./docs/rankcard.md)
-- [LevelUpCard](./docs/levelupcard.md)
-- [WelcomeCard](./docs/welcomecard.md)
-- [GoodbyeCard](./docs/goodbyecard.md)
 
 ## Styles
 

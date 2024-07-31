@@ -1,6 +1,6 @@
 {
   "name": "@hitomihiumi/discord-cards",
-  "version": "0.5.4",
+  "version": "1.0.0",
   "description": "A simple module with out-of-the-box solutions for rank, profile and user greeting cards.",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
@@ -15,12 +15,16 @@
     "canvas"
   ],
   "author": "hitomihiumi",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "@hitomihiumi/lazy-canvas": "^1.1.0",
+    "@hitomihiumi/lazy-canvas": "^1.2.1",
     "node-fetch": "^2.7.0"
   },
   "devDependencies": {
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "typedoc": "^0.26.4",
+    "typedoc-material-theme": "^1.1.0",
+    "typedoc-plugin-extras": "^3.1.0",
+    "tslib": "^2.6.3"
   }
 }

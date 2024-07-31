@@ -1,10 +1,11 @@
-import { Font, isImageUrlValid, isValidColor } from "@hitomihiumi/lazy-canvas";
+import { Font, isImageUrlValid, isValidColor, Gradient, Pattern } from "@hitomihiumi/lazy-canvas";
+import { Card } from "../types/card";
 
 export class Base {
-    data: any;
+    data: Card;
 
-    constructor(data: any) {
-        this.data = { ...data }
+    constructor(data?: Card) {
+        this.data = data ? { ...data } : {} as Card;
 
         this.data.style = 'base';
     }
@@ -28,7 +29,7 @@ export class Base {
         return this;
     }
 
-    setTextColor(color: string) {
+    setTextColor(color: string | Gradient | Pattern) {
         if (!isValidColor(color)) throw new Error('[Discord-Cards] Invalid color');
         this.data.textColor = color;
 
@@ -47,14 +48,14 @@ export class Base {
         return this;
     }
 
-    setDecorationColor(color: string) {
+    setDecorationColor(color: string | Gradient | Pattern) {
         if (!isValidColor(color)) throw new Error('[Discord-Cards] Invalid color');
         this.data.decorationColor = color;
 
         return this;
     }
 
-    setBorderColor(color: string) {
+    setBorderColor(color: string | Gradient | Pattern) {
         if (!isValidColor(color)) throw new Error('[Discord-Cards] Invalid color');
         this.data.borderColor = color;
 

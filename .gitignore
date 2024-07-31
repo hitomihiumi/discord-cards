@@ -1,7 +1,10 @@
 /discord-cards.iml
-/.idea/
 /package-lock.json
-/stylelib/
 /test.png
+
+/stylelib/
+/.idea/
 /node_modules/
-dist
+/dist/
+/gitignore/
+/docs-out/

@@ -1,12 +1,36 @@
 import { isValidColor } from '@hitomihiumi/lazy-canvas';
 import {loadStyle, renderCard} from '../utils';
 import { Base } from './base';
-import { Rank } from "../types/rank";
+import { Card } from "../types/card";
+
+/**
+ * @example
+ * import { RankCard, fonts } from "@hitomihiumi/discord-cards";
+ * import { saveFile } from "@hitomihiumi/lazy-canvas";
+ *
+ * const card = new RankCard()
+ *     .setAvatar('https://i.pinimg.com/1200x/f3/32/19/f332192b2090f437ca9f49c1002287b6.jpg')
+ *     .setBackground('https://www.sumadhwaseva.com/wp-content/uploads/2013/10/Grey-Background-Website-Wallpapers-600x200.jpg')
+ *     .setLevel(5)
+ *     .setCurrentXp(100)
+ *     .setNeededXp(200)
+ *     .setProgressColor('#7289da')
+ *     .setTextColor('#ffffff')
+ *     .setStyle('base')
+ *     .setName('Hitomi')
+ *     .setFont(fonts.opensansBold);
+ *
+ * async function main() {
+ *     let canvas = await card.render();
+ *     console.log(canvas);
+ *
+ *     saveFile(canvas, 'png', 'test');
+ * }
+ */
 
 export class RankCard extends Base {
-    declare data: any;
 
-    constructor(data?: any) {
+    constructor(data?: Card) {
         super(data);
     }
 
