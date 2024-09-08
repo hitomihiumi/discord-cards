@@ -1,6 +1,26 @@
-import { LevelUpCard, RankCard, WelcomeCard, GoodbyeCard, ProfileCard, fonts } from "../dist";
+import { LevelUpCard, RankCard, WelcomeCard, GoodbyeCard, ProfileCard, fonts } from "../src";
 import { saveFile } from "@hitomihiumi/lazy-canvas";
 
+const card = new GoodbyeCard()
+    .setName('Hitomi')
+    .setAvatar('https://i.pinimg.com/1200x/f3/32/19/f332192b2090f437ca9f49c1002287b6.jpg')
+    .setBackground('https://i.pinimg.com/736x/42/b5/20/42b5208e8c4b16cd3e8a8146b5b79013.jpg')
+    .setFont(fonts.opensansBold)
+    .setStyle('base')
+    .setBorderColor('#fff')
+    .setTextColor('#fff')
+    .setGuild('Test');
+
+async function main() {
+    let canvas = await card.render();
+    console.log(canvas);
+
+    saveFile(canvas, 'png', 'test');
+}
+
+main();``
+
+/*
 const card = new GoodbyeCard()
     .setName('Hitomi')
     .setAvatar('https://i.pinimg.com/1200x/f3/32/19/f332192b2090f437ca9f49c1002287b6.jpg')
@@ -11,17 +31,6 @@ const card = new GoodbyeCard()
     .setTextColor('#fff')
     .setGuild('Test');
 
-
-async function main() {
-    let canvas = await card.render();
-    console.log(canvas);
-
-    saveFile(canvas, 'png', 'test');
-}
-
-main();
-
-/*
 const card = new LevelUpCard()
     .setName("Hitomi")
     .setAvatar('https://i.pinimg.com/1200x/f3/32/19/f332192b2090f437ca9f49c1002287b6.jpg')

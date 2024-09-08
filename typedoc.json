@@ -5,9 +5,6 @@
   "name": "Discord Cards",
   "includeVersion": true,
   "plugin": ["typedoc-material-theme", "typedoc-plugin-extras"],
-  "favicon": "./gitignore/favicon.ico",
-  "customTitle": "Discord Cards",
-  "themeColor": "#ff8a8a",
   "theme": "default",
   "readme": "readme.md"
 }

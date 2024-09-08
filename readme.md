@@ -10,7 +10,7 @@ A simple module with out-of-the-box solutions for rank, profile and user greetin
 
 ## Documentation
 
-You can find the documentation [here](https://hitomihiumi.xyz/)
+You can find the documentation [here](https://docs.hitomihiumi.xyz/)
 
 ## Example
 

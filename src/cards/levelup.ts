@@ -29,6 +29,7 @@ export class LevelUpCard extends Base {
 
     constructor(data?: Card) {
         super(data);
+        this.data.levelFontSizes = [];
     }
 
     setCurrentLevel(level: number) {

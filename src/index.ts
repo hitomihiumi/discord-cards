@@ -6,7 +6,7 @@ import { GoodbyeCard } from "./cards/goodbye";
 
 import { fonts } from "./fonts/fonts";
 
-import { updateStyle, loadStyle, dataReplace } from "./utils";
+import { updateStyle, loadStyle } from "./utils";
 
 import { Card } from "./types/card";
 
@@ -19,6 +19,5 @@ export {
     fonts,
     updateStyle,
     loadStyle,
-    dataReplace,
     Card
 };

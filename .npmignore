@@ -6,6 +6,7 @@ typedoc.json
 package-lock.json
 discord-cards.iml
 test.png
+docgen.js
 
 src
 test
